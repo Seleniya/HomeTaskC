@@ -93,7 +93,7 @@ else
 8 -> 2, 4, 6, 8
  */
 
-
+/*
 Console.WriteLine("Напишите число, а  я покажу все положительные чётные числа до него");
 int a = int.Parse(Console.ReadLine()!);
 int i = 0;
@@ -102,3 +102,4 @@ while ( i < a)
     i +=2;
     Console.WriteLine(i);
 }
+*/
