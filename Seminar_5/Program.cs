@@ -1,17 +1,4 @@
-﻿/*int[] CreateArray(int N)
-{
-    int[] arrayA = new int[N * 2 + 1];
-    for (int i = -N; i <= N; i++)
-    {
-        arrayA[i + N] = i;
-    }
-    
-    return arrayA;
-}
-
-int[]array = CreateArray(6);
-Console.WriteLine(array);
-*/
+﻿
 /*
 Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 [345, 897, 568, 234] -> 2
@@ -43,30 +30,46 @@ Console.WriteLine($"Количество чётных чисел массива 
 [-4, -6, 89, 6] -> 0
 
 */
+/*
 int size = 10;
 int [] GetArray = new int[size];
 Random rand = new Random();
 for (int i = 0; i < GetArray.Length; i++)
 {   
-    GetArray[i] = rand.Next(100);
+    GetArray[i] = rand.Next(-100, 100);
     Console.WriteLine(GetArray[i]);
 }
-int sumEvenI = 0;
-for (int i = 0; i < GetArray.Length; i++)
+int sumOddI = 0;
+for (int i=0; i < GetArray.Length; i++)
 {
-    if (i %2==0)
+    if (i %2==1)
     {
-       sumEvenI += GetArray[i];
+       sumOddI += GetArray[i];
        
     }
     
 }
 
-Console.WriteLine($"Сумма элементов массива, стоящих на чётном месте {sumEvenI}" );
-
+Console.WriteLine($"Сумма элементов массива, стоящих на нечётном месте {sumOddI}" );
+*/
 /*
 
 Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 
 */
+
+int size = 10;
+double[] GetArray = new double[size];
+Random rand = new Random();
+for (int i = 0; i < GetArray.Length; i++)
+{   
+    GetArray[i] = rand.Next(-100, 100);
+    Console.WriteLine(GetArray[i]);
+}
+//double diff = GetArray.Max() - GetArray.Min();
+
+Console.WriteLine("Minimum number is " + GetArray.Min());
+Console.WriteLine("Maximum number is " + GetArray.Max());
+
+Console.WriteLine("Разница между ними " + Math.Abs(GetArray.Max()- GetArray.Min()) + " пункта.");
