@@ -77,13 +77,13 @@ void GetChangeMatrix (int[,] matr)
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
 */
-/*
+
 int[,] resMatrix = GetMatrix(7, 5, 0, 10);
 
 PrintMatrix(resMatrix);
 Console.WriteLine();
 
-GetTheSmollestSumOfRows(resMatrix);
+Console.WriteLine($"Строка с наименьшей суммой: {GetTheSmollestSumOfRows(resMatrix)}");
     
 
 int[,] GetMatrix(int m, int n, int min, int max)
@@ -114,33 +114,33 @@ void PrintMatrix(int[,] array)
     }
 }
 
-void GetTheSmollestSumOfRows (int[,] matr)
+int GetTheSmollestSumOfRows (int[,] matr)
 {
-    int sumOfRows = 0;
-    int min = int.MaxValue;
-    int index = 0;
+    
+    int rowWithMinsum = 0;
+    int minSum = 0;
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {    
-                                  
-            sumOfRows = sumOfRows + matr[ i,j ];
-                if (min > sumOfRows)
-                {
-                min = sumOfRows;
-                index = i;
-                }                              
+        minSum = minSum + matr[0, i];
+        for (i = 1; i < matr.GetLength(0); i++)
+        {
+            int sum = 0;
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                sum = sum + matr[i, j];
+            if( minSum > sum)
+            {
+                minSum = sum;
+                rowWithMinsum = i;
+            }    
+                
+            }
         }
-        Console.WriteLine($" Сумма {i + 1} строки = {sumOfRows}");
-        
-    }
-     Console.WriteLine($"Самая маленькая сумма - это {index + 1} строка\t Спросите меня, как я это сделала, и я отвечу: вообще не знаю,\t но очень рада.");
-   
-
+    }    
+    return rowWithMinsum + 1;
      
 }
-*/
+
 /*
 Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 Например, даны 2 матрицы:
